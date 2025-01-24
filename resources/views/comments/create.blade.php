@@ -1,4 +1,5 @@
 @extends('partials.layout')
+
 @section('content')
 <div class="container">
     <h1>Add Comment</h1>
@@ -10,11 +11,7 @@
         </div>
         <div class="mb-3">
             <label for="post_id" class="form-label">Post</label>
-            <select name="post_id" id="post_id" class="form-select" required>
-                @foreach ($posts as $post)
-                    <option value="{{ $post->id }}">{{ $post->title }}</option>
-                @endforeach
-            </select>
+            <input type="text" value="{{$_GET[$post->id]}}">
         </div>
         <button type="submit" class="btn btn-primary">Add Comment</button>
     </form>
